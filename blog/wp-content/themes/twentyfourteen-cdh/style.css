@@ -1,0 +1,18 @@
+/*
+ Theme Name:   Twenty Fourteen CDH
+ Theme URI:    http://example.com/twentyfourteen-cdh/
+ Description:  Twenty Fourteen Child Theme for CDH
+ Author:       Kyle Harper
+ Author URI:   http://www.completedentalhealth.net
+ Template:     twentyfourteen
+ Version:      1.0.0
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twentyfourteen-cdh
+*/
+
+
+@import url("../twentyfourteen/style.css");
+
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */

@@ -1,0 +1,10 @@
+[ODBC]
+DRIVER=MySQL ODBC 3.51 Driver
+UID=collinsdentalc
+STMT=
+OPTION=
+PORT=
+PASSWORD=Complete#3808#
+SERVER=collinsdentalc.db.10734413.hostedresource.com
+DATABASE=collinsdentalc
+DESC=

@@ -1,0 +1,291 @@
+RewriteEngine On 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#Always have a trailing slash on pages, not on  resource files
+RewriteCond %{REQUEST_URI}  !\.(php|html?|jpg|gif|png|pdf)$
+RewriteRule ^(.*)([^/])$ http://%{HTTP_HOST}/$1$2/ [L,R=301]
+
+##################################################################
+#/
+##################################################################
+#Rewrite non-www version of URI to www-version (applies to completedentalhealth.net domain only, not localhost)
+RewriteCond %{HTTP_HOST} ^([a-z.]+)?completedentalhealth.net$ [NC]
+RewriteCond %{HTTP_HOST} !^www. [NC]
+RewriteRule .? http://www.%1completedentalhealth.net%{REQUEST_URI} [R=301]
+
+#Rewrite to canonical http://www.completedentalhealth.net/
+RewriteRule ^/?index\.php$ http://www.completedentalhealth.net/ [R=301,L]
+
+##Rewrite to canonical http://www.completedentalhealth.net/about/
+#RewriteCond %{QUERY_STRING} !tag
+#RewriteRule ^/?about\.php$ http://www.completedentalhealth.net/about/ [R=301,L]    
+#RewriteRule ^/?about/$ ./about.php?tag [L]
+
+##Rewrite to canonical http://www.completedentalhealth.net/contact/
+#RewriteCond %{QUERY_STRING} !tag
+#RewriteRule ^/?contact\.php$ http://www.completedentalhealth.net/contact/ [R=301,L]    
+#RewriteRule ^/?contact/$ ./contact.php?tag [L]
+
+##Rewrite to canonical http://www.completedentalhealth.net/privacy-policy/
+#RewriteCond %{QUERY_STRING} !tag
+#RewriteRule ^/?privacy\.php$ http://www.completedentalhealth.net/privacy-policy/ [R=301,L]    
+#RewriteRule ^/?privacy-policy/$ ./privacy.php?tag [L]
+
+##Rewrite to canonical http://www.completedentalhealth.net/sitemap/
+#RewriteCond %{QUERY_STRING} !tag
+#RewriteRule ^/?sitemap\.html$ http://www.completedentalhealth.net/sitemap/ [R=301,L]    
+#RewriteRule ^/?sitemap/$ ./sitemap.html?tag [L]
+
+##Rewrite to canonical http://www.completedentalhealth.net/missing/
+#RewriteCond %{QUERY_STRING} !tag
+#RewriteRule ^/?missing\.html$ http://www.completedentalhealth.net/missing/ [R=301,L]    
+#RewriteRule ^/?missing/$ ./missing.html?tag [L]
+
+##################################################################
+#/products-and-services
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/products-and-services/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/index\.php$ http://www.completedentalhealth.net/products-and-services/ [R=301,L]    
+RewriteRule ^/?products-and-services/$ ./products-and-services/index.php?tag [L]
+
+##################################################################
+#/products-and-services/cosmetic
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/natural-looking-cosmetic-dentistry/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/index\.php$ http://www.completedentalhealth.net/natural-looking-cosmetic-dentistry/ [R=301,L]    
+RewriteRule ^/?natural-looking-cosmetic-dentistry/$ ./products-and-services/cosmetic/index.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/professional-teeth-whitening/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/whitening\.php$ http://www.completedentalhealth.net/professional-teeth-whitening/ [R=301,L]    
+RewriteRule ^/?professional-teeth-whitening/$ ./products-and-services/cosmetic/whitening.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/smile-makeover/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/smile-makeover\.php$ http://www.completedentalhealth.net/smile-makeover/ [R=301,L]    
+RewriteRule ^/?smile-makeover/$ ./products-and-services/cosmetic/smile-makeover.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/dental-implants/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/implants\.php$ http://www.completedentalhealth.net/dental-implants/ [R=301,L]    
+RewriteRule ^/?dental-implants/$ ./products-and-services/cosmetic/implants.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/tooth-colored-fillings/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/fillings\.php$ http://www.completedentalhealth.net/tooth-colored-fillings/ [R=301,L]    
+RewriteRule ^/?tooth-colored-fillings/$ ./products-and-services/cosmetic/fillings.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/dental-bonding/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/bonding\.php$ http://www.completedentalhealth.net/dental-bonding/ [R=301,L]    
+RewriteRule ^/?dental-bonding/$ ./products-and-services/cosmetic/bonding.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/crowns-and-onlays/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/crowns-onlays-inlays\.php$ http://www.completedentalhealth.net/crowns-and-onlays/ [R=301,L]    
+RewriteRule ^/?crowns-and-onlays/$ ./products-and-services/cosmetic/crowns-onlays-inlays.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/porcelain-veneers/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/veneers\.php$ http://www.completedentalhealth.net/porcelain-veneers/ [R=301,L]    
+RewriteRule ^/?porcelain-veneers/$ ./products-and-services/cosmetic/veneers.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/complete-and-partial-dentures/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/dentures\.php$ http://www.completedentalhealth.net/complete-and-partial-dentures/ [R=301,L]    
+RewriteRule ^/?complete-and-partial-dentures/$ ./products-and-services/cosmetic/dentures.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/tooth-reshaping-and-contouring/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/enameloplasty\.php$ http://www.completedentalhealth.net/tooth-reshaping-and-contouring/ [R=301,L]    
+RewriteRule ^/?tooth-reshaping-and-contouring/$ ./products-and-services/cosmetic/enameloplasty.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/laser-gum-contouring-surgery/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/gingivectomy\.php$ http://www.completedentalhealth.net/laser-gum-contouring-surgery/ [R=301,L]    
+RewriteRule ^/?laser-gum-contouring-surgery/$ ./products-and-services/cosmetic/gingivectomy.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/minimally-invasive-dentistry/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/minimally-invasive-dentistry/\.php$ http://www.completedentalhealth.net/minimally-invasive-dentistry/ [R=301,L]    
+RewriteRule ^/?minimally-invasive-dentistry/$ ./products-and-services/cosmetic/minimally-invasive-dentistry.php?tag [L]
+
+##################################################################
+#/products-and-services/cosmetic/invisalign
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/invisalign/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/invisalign\/index\.php$ http://www.completedentalhealth.net/invisalign/ [R=301,L]    
+RewriteRule ^/?invisalign/$ ./products-and-services/cosmetic/invisalign/index.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/invisalign-teen/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/invisalign\/teen\.php$ http://www.completedentalhealth.net/invisalign-teen/ [R=301,L]    
+RewriteRule ^/?invisalign-teen/$ ./products-and-services/cosmetic/invisalign/teen.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/invisalign-military/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/cosmetic\/invisalign\/military\.php$ http://www.completedentalhealth.net/invisalign-military/ [R=301,L]    
+RewriteRule ^/?invisalign-military/$ ./products-and-services/cosmetic/invisalign/military.php?tag [L]
+
+##################################################################
+#/products-and-services/prevention
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/preventive-dentistry/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/index\.php$ http://www.completedentalhealth.net/preventive-dentistry/ [R=301,L]    
+RewriteRule ^/?preventive-dentistry/$ ./products-and-services/prevention/index.php?tag [L]
+
+##################################################################
+#/products-and-services/prevention/cleanings-and-checkups
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/oral-hygiene/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/cleanings-and-checkups\/index\.php$ http://www.completedentalhealth.net/oral-hygiene/ [R=301,L]    
+RewriteRule ^/?oral-hygiene/$ ./products-and-services/prevention/cleanings-and-checkups/index.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/oral-hygiene-products/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/cleanings-and-checkups\/products\.php$ http://www.completedentalhealth.net/oral-hygiene-products/ [R=301,L]    
+RewriteRule ^/?oral-hygiene-products/$ ./products-and-services/prevention/cleanings-and-checkups/products.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/professional-teeth-cleanings-and-checkups/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/cleanings-and-checkups\/treatments\.php$ http://www.completedentalhealth.net/professional-teeth-cleanings-and-checkups/ [R=301,L]    
+RewriteRule ^/?professional-teeth-cleanings-and-checkups/$ ./products-and-services/prevention/cleanings-and-checkups/treatments.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/oral-hygiene-tips/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/cleanings-and-checkups\/tips\.php$ http://www.completedentalhealth.net/oral-hygiene-tips/ [R=301,L]    
+RewriteRule ^/?oral-hygiene-tips/$ ./products-and-services/prevention/cleanings-and-checkups/tips.php?tag [L]
+
+##################################################################
+#/products-and-services/prevention/relief
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/pain-relief/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/relief\/index\.php$ http://www.completedentalhealth.net/pain-relief/ [R=301,L]    
+RewriteRule ^/?pain-relief/$ ./products-and-services/prevention/relief/index.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/tap-appliance/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/relief\/tap\.php$ http://www.completedentalhealth.net/tap-appliance/ [R=301,L]    
+RewriteRule ^/?tap-appliance/$ ./products-and-services/prevention/relief/tap.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/sleep-apnea/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/relief\/sleep-apnea\.php$ http://www.completedentalhealth.net/sleep-apnea/ [R=301,L]    
+RewriteRule ^/?sleep-apnea/$ ./products-and-services/prevention/relief/sleep-apnea.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/snoring/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/relief\/snoring\.php$ http://www.completedentalhealth.net/snoring/ [R=301,L]    
+RewriteRule ^/?snoring/$ ./products-and-services/prevention/relief/snoring.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/nti/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/relief\/nti\.php$ http://www.completedentalhealth.net/nti/ [R=301,L]    
+RewriteRule ^/?nti/$ ./products-and-services/prevention/relief/nti.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/tmj/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/relief\/tmj\.php$ http://www.completedentalhealth.net/tmj/ [R=301,L]    
+RewriteRule ^/?tmj/$ ./products-and-services/prevention/relief/tmj.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/headache/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/prevention\/relief\/headache\.php$ http://www.completedentalhealth.net/headache/ [R=301,L]    
+RewriteRule ^/?headache/$ ./products-and-services/prevention/relief/headache.php?tag [L]
+
+##################################################################
+#/products-and-services/sedation
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/sedation-dentistry/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/sedation\/index\.php$ http://www.completedentalhealth.net/sedation-dentistry/ [R=301,L]    
+RewriteRule ^/?sedation-dentistry/$ ./products-and-services/sedation/index.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/halcion-oral-sedation/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^products-and-services\/sedation\/halcion\.php$ http://www.completedentalhealth.net/halcion-oral-sedation/ [R=301,L]    
+RewriteRule ^/?halcion-oral-sedation/$ ./products-and-services/sedation/halcion.php?tag [L]
+
+##################################################################
+#/patient-resources
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/patient-resources/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^patient-resources\/index\.php$ http://www.completedentalhealth.net/patient-resources/ [R=301,L]    
+RewriteRule ^/?patient-resources/$ ./patient-resources/index.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/faq/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^patient-resources\/faq\.php$ http://www.completedentalhealth.net/faq/ [R=301,L]    
+RewriteRule ^/?faq/$ ./patient-resources/faq.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/dental-finance-options/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^patient-resources\/finance-options\.php$ http://www.completedentalhealth.net/dental-finance-options/ [R=301,L]    
+RewriteRule ^/?dental-finance-options/$ ./patient-resources/finance-options.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/dental-insurance-advice/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^patient-resources\/insurance\.php$ http://www.completedentalhealth.net/dental-insurance-advice/ [R=301,L]    
+RewriteRule ^/?dental-insurance-advice/$ ./patient-resources/insurance.php?tag [L]
+
+##################################################################
+#/patient-resources/forms
+##################################################################
+#Rewrite to canonical http://www.completedentalhealth.net/forms/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^patient-resources\/forms\/index\.php$ http://www.completedentalhealth.net/forms/ [R=301,L]    
+RewriteRule ^/?forms/$ ./patient-resources/forms/index.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/feedback/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^patient-resources\/forms\/feedback\.php$ http://www.completedentalhealth.net/feedback/ [R=301,L]    
+RewriteRule ^/?feedback/$ ./patient-resources/forms/feedback.php?tag [L]
+
+#Rewrite to canonical http://www.completedentalhealth.net/feedback/
+RewriteCond %{QUERY_STRING} !tag
+RewriteRule ^patient-resources\/forms\/send-feedback\.php$ http://www.completedentalhealth.net/feedback/ [R=301,L]    
+RewriteRule ^/?feedback/$ ./patient-resources/forms/send-feedback.php?tag [L]
+
+
+####################################################################################################
+#Redirects to handle pages that have been moved or taken away permanently (includes Google 404 Errors)
+####################################################################################################
+Redirect 301 /patient-resources/forms/index.html http://www.completedentalhealth.net/patient-resources/forms/index.php
+Redirect 301 /patient-resources/faq.html http://www.completedentalhealth.net/patient-resources/faq.php
+Redirect 301 /products-and-services/cosmetic/dentures.html http://www.completedentalhealth.net/products-and-services/cosmetic/dentures.php
+Redirect 301 /products-and-services/cosmetic/implants.html http://www.completedentalhealth.net/products-and-services/cosmetic/implants.php
+Redirect 301 /products-and-services/cosmetic/fillings.html http://www.completedentalhealth.net/products-and-services/cosmetic/fillings.php
+Redirect 301 /products-and-services/cosmetic/crowns-onlays-inlays.html http://www.completedentalhealth.net/products-and-services/cosmetic/crowns-onlays-inlays.php
+Redirect 301 /products-and-services/prevention/cleanings-and-checkups/treatments.html http://www.completedentalhealth.net/products-and-services/prevention/cleanings-and-checkups/treatments.php
+Redirect 301 /products-and-services/prevention/relief/index.php http://www.completedentalhealth.net/products-and-services/prevention/index.php
+Redirect 301 /patient-resources/gallery.html http://www.completedentalhealth.net/products-and-services/cosmetic/smile-makeover.php
+Redirect 301 /patient-resources/glossary.html http://www.completedentalhealth.net/patient-resources/faq.php
+Redirect 301 /patient-resources/news.html http://www.completedentalhealth.net/blog/
+Redirect 301 /patient-resources/tips.html http://www.completedentalhealth.net/products-and-services/prevention/cleanings-and-checkups/tips.php
+Redirect 301 /patient-resources/gallery.php http://www.completedentalhealth.net/products-and-services/cosmetic/smile-makeover.php
+Redirect 301 /patient-resources/glossary.php http://www.completedentalhealth.net/patient-resources/faq.php
+Redirect 301 /patient-resources/news.php http://www.completedentalhealth.net/blog/
+Redirect 301 /patient-resources/tips.php http://www.completedentalhealth.net/products-and-services/prevention/cleanings-and-checkups/tips.php
+Redirect 301 /index.html http://www.completedentalhealth.net/
+Redirect 301 /about.html http://www.completedentalhealth.net/about.php
+#Redirect 301 /about/ http://www.completedentalhealth.net/about.php
+Redirect 301 /contact.html http://www.completedentalhealth.net/contact.php
+#Redirect 301 /contact/ http://www.completedentalhealth.net/contact.php
+Redirect 301 /blog/sample-page/ http://www.completedentalhealth.net/blog
+Redirect 301 /products-and-services/cosmetic/invisalign/info.php http://www.completedentalhealth.net/products-and-services/cosmetic/invisalign/index.php
+Redirect 301 /professional-teeth-cleanings/ http://www.completedentalhealth.net/professional-teeth-cleanings-and-checkups/
+Redirect 301 /teeth-cleanings-and-checkups/ http://www.completedentalhealth.net/professional-teeth-cleanings-and-checkups/
+Redirect 301 /finance-options/ http://www.completedentalhealth.net/dental-finance-options/
+Redirect 301 /patient-resources/financing-options.php http://www.completedentalhealth.net/dental-finance-options/
+Redirect 301 /patient-resources/sedation.php http://www.completedentalhealth.net/sedation-dentistry/
+Redirect 301 /c/ http://www.completedentalhealth.net/
+Redirect 301 /complete/search/ http://www.completedentalhealth.net/
+Redirect 301 /ripples/details/ http://www.completedentalhealth.net/

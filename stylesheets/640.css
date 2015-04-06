@@ -1,0 +1,193 @@
+/*
+Cascading Style Sheet For 640px-899px
+
+Domain:			completedentalhealth.net
+Author:			Kyle Harper
+Creation Date:	12 Apr 2014
+Revision Date:	12 Apr 2014
+
+*/
+
+/*TEXT*/
+body {font-size:20px;font-size:1.25rem;}
+footer {font-size:12px;font-size:0.75rem;}
+h1,.heading {font-size:26px;font-size:1.63rem;}
+h2, h3, h4, h5, h6 {font-size:24px;font-size:1.50rem;}
+.text-massive {font-size:40px;font-size:2.5rem;}
+.text-large {font-size:28px;font-size:1.75rem;}
+.text-medium {font-size:24px;font-size:1.5rem;}
+.text-small {font-size:20px;font-size:1.25rem;}
+.text-micro {font-size:12px;font-size:0.75rem;}
+
+
+div.content{
+    width:90%;
+	margin:auto;
+	margin-top:21px;
+	position:relative;
+	display:block;
+}
+div.content .article{
+    width:75%;
+	margin:auto;
+	display:block;
+	position:relative;
+	text-align:justify;
+}
+div.share-links {
+	height:32px;
+	padding-left:15px;
+	padding-top:8px;
+	float:right;
+}
+div.share-google {
+	width:80px;
+	height:24px;
+	vertical-align:top;
+	position:relative;
+	float:right;
+	display:inline;
+}
+div.share-facebook {
+	width:140px;
+	height:24px;
+	vertical-align:top;
+	position:relative;
+	float:right;
+	display:inline;
+}
+div.share-twitter {
+	width:95px;
+	height:24px;
+	vertical-align:top;
+	position:relative;
+	float:right;
+	display:inline;
+}
+/*TOP BAR*/
+div.top-bar {
+	width:100%;
+	height:60px;
+    position:relative;
+	top:42px;
+	left:0px;
+	z-index:0;
+}
+div.logo-box {
+	width:50px;
+	height:50px;
+	float:left;
+	padding-top:5px;
+	padding-left:5px;
+}
+div.company-box {
+	width:300px;
+	height:50px;
+	float:left;
+	padding-top:5px;
+	padding-left:5px;
+}
+div.company {
+	width:300px;
+	vertical-align:top;
+	float:right;
+	text-align:left;
+	line-height:30px;
+	font-size:24px;
+	font-size:1.5rem;
+}
+div.tagline {
+	width:300px;
+	float:right;
+	margin-top:-5px;
+	text-align:center;
+	line-height:20px;
+	font-size:16px;
+	font-size:1.0rem;
+}
+div.call-box {
+	float:right;
+	height:50px;
+	margin-right:20px;
+	margin-top:5px;
+	text-align:center;
+}
+div.call {
+	line-height:12px;
+	font-size:16px;
+	font-size:1.0rem;
+}
+div.phone {
+	line-height:38px;
+	font-size:38px;
+	font-size:2.38rem;
+}
+
+
+div.box-large {
+    width:100%;
+    height:640px;
+	margin: 0 auto;
+	position:relative;
+    display:inline-block;
+	overflow:hidden;
+}
+.box-large .inset {margin:15px 15px 15px 15px;}
+div.box-medium {
+    width:50%;
+    height:320px;
+	margin: 0 auto;
+	position:relative;
+    display:inline-block;
+	overflow:hidden;
+}
+.box-medium .inset {margin:10px 10px 10px 10px;}
+div.box-medium-tall {
+    width:50%;
+    height:640px;
+	margin: 0 auto;
+	position:relative;
+    display:inline-block;
+	overflow:hidden;
+}
+.box-medium-tall .inset {margin:15px 10px 15px 10px;}
+div.box-small {
+    width:50%;
+	margin: 0 auto;
+	position:relative;
+    display:inline-block;
+	overflow:hidden;
+}
+.box-small .inset {margin:5px 5px 5px 5px;}
+div.box-small-wide {
+    width:100%;
+	margin: 0 auto;
+	position:relative;
+    display:inline-block;
+	overflow:hidden;
+}
+.box-small-wide .inset {margin:5px 5px 5px 5px;}
+div.box-wide {
+    width:100%;
+	min-height:40px;
+	margin: 0 auto;
+	position:relative;
+    display:inline-block;
+	overflow:hidden;
+}
+.box-wide .inset {margin:20px 10px 20px 10px;}
+div.box-tall {
+    width:50%;
+    min-height:640px;
+	margin: 0 auto;
+	position:relative;
+    display:inline-block;
+	overflow:hidden;
+}
+.box-tall .inset {margin:20px 10px 20px 10px;}
+
+.contact-form.animate {
+	width: 480px;
+}
+.form-input-narrow {display:table-cell;width:60%;}
+.form-input-wide {display:table-cell;width:95%;}
