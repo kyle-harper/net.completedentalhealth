@@ -1,3 +1,3 @@
 .htaccess
-conf/config.php
+conf/**
 blog/wp-config.php
